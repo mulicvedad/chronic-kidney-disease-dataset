@@ -7,4 +7,10 @@ export default class DataService extends BaseService {
     mainData() {
         return super.get('main');
     }
+    hypertensionData() {
+        return super.get('hypertension');
+    }
+    anemiaData() {
+        return super.get('anemia');
+    }
 }

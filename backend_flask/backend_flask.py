@@ -73,5 +73,42 @@ def index_by_concentration(concentration):
         return 4
 
 
+@app.route('/hypertension')     # pie chart data
+def hypertension():
+    return jsonify(_ckd_percentage('\'htn\'', 'yes', 'ckd'))
+
+
+@app.route('/anemia')   # pie chart data
+def anemia():
+    return jsonify(_ckd_percentage('\'ane\'', 'yes', 'ckd'))
+
+
+@app.route('/appetite')   # pie chart data
+def apetite():
+    return jsonify(_ckd_percentage('\'appet\'', 'poor', 'notckd'))
+
+
+# Parameters: disease_mark ('htn', 'bp', 'rc'...), value( 'yes', 'no', 'good', 'poor' ...), ckd_value ('ckd' or 'notckd')
+# Description: this function returns percentage of patients who satiesfy conditions/parameters
+# Example: htn-no-ckd -> returns number of patients who are sick (ckd) and who don't have hypertension
+def _ckd_percentage(disease_mark, value, ckd_value):  # maybe it is more suitable to say 'condition' than 'disease'
+    num_positive = 0    # how many patients have condition with mark 'disease_mark'
+    num_negative = 0    # for example disease_mark = 'htn' is for hypertension
+    for record in contents:
+        if record[disease_mark] != '?' and record["'class'"] == ckd_value:
+            if record[disease_mark] == value:
+                num_positive += 1
+            else:
+                num_negative += 1
+    positive_percentage = float(num_positive * 100) / (num_positive + num_negative)
+    positive_percentage = round(positive_percentage, 2)
+    return positive_percentage
+
+
+@app.route('/test')
+def test():
+    return 'test'
+
+
 if __name__ == '__main__':
     app.run()

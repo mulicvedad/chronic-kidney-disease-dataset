@@ -11,5 +11,25 @@
     <p style="color:lightseagreen;text-align:center"> Broj oboljelih pacijenata u zavisnosti od koncentracije kreatinina u serumu </p>         
   </div>
 </div>
+<div class="row">
+    <div class="col s5 offset-s1">
+      <div class="card grey lighten-5">
+        <div class="card-content" >
+          <canvas id="piechart1" class="chart chart-pie" chart-data="$ctrl.dataPieHtn" chart-labels="$ctrl.labelsHtn" 
+          chart-options="$ctrl.options"></canvas>  
+        </div>
+      </div>
+      <p style="color:lightseagreen;text-align:center"> Procenat oboljelih pacijenata koji imaju hipertenziju </p>         
+    </div>
+    <div class="col s5 offset-s1">
+        <div class="card grey lighten-5">
+          <div class="card-content" >
+            <canvas id="piechart2" class="chart chart-pie" chart-data="$ctrl.dataPieAne" chart-labels="$ctrl.labelsAne" 
+              chart-options="$ctrl.options"></canvas>  
+          </div>
+        </div>
+        <p style="color:lightseagreen;text-align:center"> Procenat oboljelih pacijenata koji imaju anemiju </p>         
+      </div>
+  </div>
 
 
