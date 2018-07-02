@@ -9,7 +9,30 @@
       </div>
     </div>
     <p style="color:lightseagreen;text-align:center"> Broj oboljelih pacijenata u zavisnosti od koncentracije kreatinina u serumu </p>         
+    <p style="color:lightseagreen;text-align:center" ><i class="material-icons" ng-click="$ctrl.showInfo(1)">info</i></p> 
   </div>
+</div>
+<div class="row">
+  <div class="col s5 offset-s1">
+    <div class="card grey lighten-5">
+      <div class="card-content" >
+        <canvas id="piechart1" class="chart chart-pie" chart-data="$ctrl.dataPieHtn" chart-labels="$ctrl.labelsHtn" 
+        chart-options="$ctrl.options"></canvas>  
+      </div>
+    </div>
+    <p style="color:lightseagreen;text-align:center"> Procenat oboljelih pacijenata koji imaju hipertenziju </p>
+    <p style="color:lightseagreen;text-align:center" ><i class="material-icons" ng-click="$ctrl.showInfo(2)">info</i></p>          
+  </div>
+  <div class="col s5 offset-s1">
+      <div class="card grey lighten-5">
+        <div class="card-content" >
+          <canvas id="piechart2" class="chart chart-pie" chart-data="$ctrl.dataPieAne" chart-labels="$ctrl.labelsAne" 
+            chart-options="$ctrl.options"></canvas>  
+        </div>
+      </div>
+      <p style="color:lightseagreen;text-align:center"> Procenat oboljelih pacijenata koji imaju anemiju </p>
+      <p style="color:lightseagreen;text-align:center" ><i class="material-icons" ng-click="$ctrl.showInfo(3)">info</i></p> 
+    </div>
 </div>
 
 

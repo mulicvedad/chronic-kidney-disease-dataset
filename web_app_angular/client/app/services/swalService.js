@@ -26,4 +26,12 @@ export default class SwalService {
             type: 'error'
         })
     }
+
+    displayInfo(title, text) {
+        swal({
+            title: title,
+            type: 'info',
+            text: text
+        })
+    }
 }

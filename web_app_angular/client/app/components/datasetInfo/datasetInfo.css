@@ -1,0 +1,17 @@
+.material-icons {
+    margin-left: 0px;
+    line-height:60%;
+    cursor: pointer;
+}
+.pagination{
+    margin-left: -40px;
+}
+
+.swal-text {
+    padding: 17px;
+    display: block;
+    margin: 22px;
+    text-align: justify;
+    color: #61534e;
+  }
+  
